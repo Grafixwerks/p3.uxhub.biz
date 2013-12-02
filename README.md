@@ -3,6 +3,14 @@ p3.uxhub.biz
 Andy Pearson
 CSCI E-15 P 3
 
+Site is an iPad App. 
+
+JavaScript flair:
+Text resize tool
+Navigation menu
+Ajax page content loads
+Email modal form
+
 Sources: 
 
 Hartl, Klaus

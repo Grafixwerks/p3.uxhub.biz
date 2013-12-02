@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 
 
-	$('.modal-1').click(function () {
+	$('.modal').click(function () {
 		$('#email-pop-1').toggle();
 		$('#email1').show();
 		$('#email-success-1').hide();
@@ -26,7 +26,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$('.close-pop-1').click(function () {
+	$('.close-pop').click(function () {
 		$('#email-pop-1').toggle();
 		$('#shade').toggle();
 		return false;
