@@ -18,12 +18,11 @@ body.small .scrollable ul,
 body.small .scrollable form,
 body.small .scrollable table {
 	font-size:14px;
-	color: #60F;
 }
 body.small .scrollable p,
 body.small .scrollable ul {
 	line-height:17px;
-	margin-top: 8px;
+	margin-top: 6px;
 	margin-bottom: 8px;
 }
 body.medium .scrollable p,
@@ -31,30 +30,33 @@ body.medium .scrollable ul,
 body.medium .scrollable form,
 body.medium .scrollable table {
 	font-size:15px;
-	color: #F00;
 }
 body.medium .scrollable p,
 body.medium .scrollable ul {
-	line-height:19px;
+	line-height:20px;
 	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-bottom: 10px;
 } 
 body.large .scrollable p,
 body.large .scrollable ul, 
 body.large .scrollable form, 
 body.large .scrollable table {
 	font-size:21px;
-	color: #000;
 } 
 body.large .scrollable p,
 body.large .scrollable ul {
 	line-height:23px;
-	margin-top: 9px;
-	margin-bottom: 9px;
+	margin-top: 10px;
+	margin-bottom: 14px;
 }
 
 
-
+a {
+	border:none;
+}
+a img {
+	border:none;
+}
 #text-tool {
 	height: 18px;
 	font-size: 13px;
@@ -63,7 +65,7 @@ body.large .scrollable ul {
 }
 #text-tool a {
 	font-weight:bold;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 
@@ -186,35 +188,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76d6bf', end
 	color: #FFF;
 	text-decoration: none;
 }
-#meeting a {
-	background-image: url(../images/sprite.png);
-	background-repeat: no-repeat;
-	background-position: 12px 9px;
+#home a {
+	background: url(../images/sprite.png) no-repeat 15px -5px;
 }
-#venue a {
-	background-image: url(../images/sprite.png);
-	background-repeat: no-repeat;
-	background-position: 12px -50px;
+#staff a {
+	background: url(../images/sprite.png) no-repeat 15px -62px;
 }
-#agenda a {
-	background-image: url(../images/sprite.png);
-	background-repeat: no-repeat;
-	background-position: 12px -110px;
-}
-#speakers a {
-	background-image: url(../images/sprite.png);
-	background-repeat: no-repeat;
-	background-position: 12px -170px;
-}
-#attendees a {
-	background-image: url(../images/sprite.png);
-	background-repeat: no-repeat;
-	background-position: 12px -230px;
-}
-#feedback a {
-	background-image: url(../images/sprite.png);
-	background-repeat: no-repeat;
-	background-position: 12px -290px;
+#memos a {
+	background: url(../images/sprite.png) no-repeat 15px -122px;
 }
 .second-nav {
 	list-style-type: none;
@@ -234,7 +215,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76d6bf', end
 	background-image: none;
 	padding-left: 20px;
 }
-#meeting ul.second-nav {
+/*#meeting ul.second-nav {
 	top: 194px;
 }
 #venue ul.second-nav {
@@ -242,11 +223,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76d6bf', end
 }
 #agenda ul.second-nav {
 	top: 312px;
+}*/
+#memos ul.second-nav {
+	top: 236px;
 }
-#feedback ul.second-nav {
-	top: 489px;
-}
-#nav ul.third-nav {
+/*#nav ul.third-nav {
 	position: absolute;
 	left: 175px;
 	width: 175px;
@@ -277,7 +258,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76d6bf', end
 #nav ul.third-nav ul.fourth-nav a {
 	background-image: none;
 	padding-left: 20px;
-}
+}*/
 .right-col {
 	background: #E8E8E8;
 	height: 768px;
@@ -350,5 +331,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76d6bf', end
 	height:686px;
 }
 .home-img {
+	padding-left: 25px;
+}
+.right-col p {
+	padding-left: 25px;
+	padding-right: 25px;
+	font-size:15px;
+	line-height:20px;
+	margin-top: 8px;
+	margin-bottom: 10px;
+}
+.right-col h3 {
+	padding-right: 25px;
 	padding-left: 25px;
 }
