@@ -8,6 +8,91 @@ body {
 	padding: 0px;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+
+/*  Different text sizes for text tool  */
+body.small .scrollable p,
+body.small .scrollable ul,
+body.small .scrollable form,
+body.small .scrollable table {
+	font-size:14px;
+	color: #60F;
+}
+body.small .scrollable p,
+body.small .scrollable ul {
+	line-height:17px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+body.medium .scrollable p,
+body.medium .scrollable ul,
+body.medium .scrollable form,
+body.medium .scrollable table {
+	font-size:15px;
+	color: #F00;
+}
+body.medium .scrollable p,
+body.medium .scrollable ul {
+	line-height:19px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+} 
+body.large .scrollable p,
+body.large .scrollable ul, 
+body.large .scrollable form, 
+body.large .scrollable table {
+	font-size:21px;
+	color: #000;
+} 
+body.large .scrollable p,
+body.large .scrollable ul {
+	line-height:23px;
+	margin-top: 9px;
+	margin-bottom: 9px;
+}
+
+
+
+#text-tool {
+	height: 18px;
+	font-size: 13px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#text-tool a {
+	font-weight:bold;
+	margin-right: 10px;
+}
+
+
+#small-text {
+	font-size: 12px;
+}
+#medium-text {
+	font-size: 15px;
+}
+#large-text {
+	font-size: 18px;
+}
+
+
+body.small #text-tool #small-text {
+	text-decoration: none;
+	color: #771213;
+}
+body.medium #text-tool #medium-text {
+	text-decoration: none;
+	color: #771213;
+}
+body.large #text-tool #large-text {
+	text-decoration: none;
+	color: #771213;
+}
+
+
+
 .wrapper {
 	width: 1024px;
 	height:768px;
@@ -15,15 +100,6 @@ body {
 	z-index: 1;
 	margin-right: auto;
 	margin-left: auto;
-}
-
-
-#left-col {
-	height:768px;
-	width: 175px;
-	z-index: 2;
-	float: left;/*	display: none;*/
-	background: #818991;
 }
 #logo {
 	display: block;
@@ -34,6 +110,21 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 }
+h1 {
+	font-size: 36px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #52B5A0;
+	padding-left: 25px;
+}
+#left-col {
+	height:768px;
+	width: 175px;
+	z-index: 2;
+	float: left;/*	display: none;*/
+	background: #818991;
+}
+
 #left-col h2 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
@@ -55,17 +146,25 @@ body {
 	width: 175px;
 }
 #nav li {
-	background: #7f7f7f; /* Old browsers */
-	background: -moz-linear-gradient(top,  #7f7f7f 0%, #757e84 5%, #6d757c 23%, #5b5f65 70%, #343f4f 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7f7f7f), color-stop(5%,#757e84), color-stop(23%,#6d757c), color-stop(70%,#5b5f65), color-stop(100%,#343f4f)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #7f7f7f 0%,#757e84 5%,#6d757c 23%,#5b5f65 70%,#343f4f 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #7f7f7f 0%,#757e84 5%,#6d757c 23%,#5b5f65 70%,#343f4f 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #7f7f7f 0%,#757e84 5%,#6d757c 23%,#5b5f65 70%,#343f4f 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #7f7f7f 0%,#757e84 5%,#6d757c 23%,#5b5f65 70%,#343f4f 100%);
-	border-bottom: 1px solid #818991;
+background: #82919e; /* Old browsers */
+background: -moz-linear-gradient(top,  #82919e 2%, #65707a 20%, #5b5f65 54%, #1b2129 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#82919e), color-stop(20%,#65707a), color-stop(54%,#5b5f65), color-stop(100%,#1b2129)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #82919e 2%,#65707a 20%,#5b5f65 54%,#1b2129 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #82919e 2%,#65707a 20%,#5b5f65 54%,#1b2129 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #82919e 2%,#65707a 20%,#5b5f65 54%,#1b2129 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #82919e 2%,#65707a 20%,#5b5f65 54%,#1b2129 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82919e', endColorstr='#1b2129',GradientType=0 ); /* IE6-9 */
+
 }
 #nav li.selected {
-	background-image: url(../images/bg-nav-selected.jpg);
+	background: #76d6bf; /* Old browsers */
+background: -moz-linear-gradient(top, #76d6bf 2%, #52b5a0 36%, #307766 79%, #194f42 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#76d6bf), color-stop(36%,#52b5a0), color-stop(79%,#307766), color-stop(100%,#194f42)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #76d6bf 2%,#52b5a0 36%,#307766 79%,#194f42 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #76d6bf 2%,#52b5a0 36%,#307766 79%,#194f42 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #76d6bf 2%,#52b5a0 36%,#307766 79%,#194f42 100%); /* IE10+ */
+background: linear-gradient(to bottom, #76d6bf 2%,#52b5a0 36%,#307766 79%,#194f42 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76d6bf', endColorstr='#194f42',GradientType=0 ); /* IE6-9 */
 }
 #nav li.click {
 	background-image: url(../images/bg-nav-click.jpg);
@@ -180,7 +279,7 @@ body {
 	padding-left: 20px;
 }
 .right-col {
-	background: #CFD6D3;
+	background: #E8E8E8;
 	height: 768px;
 	width: 849px;
 	float: right;
@@ -188,7 +287,7 @@ body {
 .banner {
 	height: 80px;
 	width: 849px;
-		background: #7f7f7f; /* Old browsers */
+	background: #7f7f7f; /* Old browsers */
 	background: -moz-linear-gradient(top,  #7f7f7f 0%, #757e84 5%, #6d757c 23%, #5b5f65 70%, #343f4f 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7f7f7f), color-stop(5%,#757e84), color-stop(23%,#6d757c), color-stop(70%,#5b5f65), color-stop(100%,#343f4f)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  #7f7f7f 0%,#757e84 5%,#6d757c 23%,#5b5f65 70%,#343f4f 100%); /* Chrome10+,Safari5.1+ */
@@ -198,4 +297,58 @@ body {
 }
 .banner img {
 	margin-left: 39px;
+}
+.staff {
+	clear: both;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999;
+}
+.staff .staff-right-col p {
+	font-size: 12px;
+	margin-bottom: 15px;
+	line-height: 17px;
+}
+.staff .staff-right-col {
+	float: right;
+	width: 445px;
+	padding-right: 185px;
+	padding-bottom: 15px;
+	position: relative;
+}
+.staff .staff-pic {
+	float: left;
+	padding-top: 20px;
+	padding-left: 25px;
+}
+.staff h3 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0px;
+	padding-top: 15px;
+}
+.staff  h4 {
+	font-size: 14px;
+	margin-top: 1px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	margin-left: 0px;
+}
+.staff p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.staff-right-col .email {
+	display: block;
+	position: absolute;
+	top: 15px;
+	right: 30px;
+	z-index: 3;
+}
+.scrollable {
+	overflow: auto;
+	height:686px;
+}
+.home-img {
+	padding-left: 25px;
 }
