@@ -9,7 +9,9 @@ body {
 	font-family: "Myriad Pro", Arial, Helvetica, sans-serif;
 }
 
-
+.error  {
+	color:#FF0000;
+}
 
 
 /*  Different text sizes for text tool  */

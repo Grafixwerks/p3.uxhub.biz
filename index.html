@@ -75,16 +75,21 @@
     <input name="email" type="hidden" value="andy@grafixwerks.com" />
     
     <h3>TO: <span id="to"></span></h3>
+    <div>
+    <label for="subject">SUBJECT</label>
     
     <input name="subject" id="subject" type="text" maxlength="30" />
     
-    <label for="subject">SUBJECT</label>
     
-    <textarea name="message" id="message" cols="" rows="">Hello </textarea>
-    
+    </div>
+    <div>
     <label for="message">MESSAGE</label>
     
-    <input name="send" type="button" value="SEND EMAIL" id="send-mail" />
+    <textarea name="message" id="message" cols="" rows="" maxlength="2000" ></textarea>
+    
+    
+    </div>
+    <input name="send" type="submit" value="SEND EMAIL" id="send-mail" />
     
     </fieldset>
 </form>
@@ -92,7 +97,6 @@
 <a href="javascript: void(0)" id="cancel" class="close">Cancel</a>
 
 </div><!--close email-pop-->
-
 
 
 
@@ -117,6 +121,7 @@ $(document).ready(function(){
 // text resize 
     var resize = $.cookie('textsize');
     var options = { path: '/', expires: 10 };
+	
     if (resize == 'small') {
       $('body').removeClass("medium");
       $('body').removeClass("large");
@@ -159,7 +164,6 @@ $(document).ready(function(){
 	  return false;
     });	
 
-
 //	hide when loading main content
 	$('a.live').click(function () {
 		$('.second-nav').hide();
@@ -184,7 +188,6 @@ $(document).ready(function(){
 //		return false;
 	})
 
-
 	// load main content
 	$('.content').click(function () {
 		var link = $(this).attr('href');
@@ -196,7 +199,6 @@ $(document).ready(function(){
 		});	
 		return false;
 	});
-
 
 //	Nav home link
 	$('#home a.first').click(function () {
@@ -214,13 +216,11 @@ $(document).ready(function(){
 		return false;
 	});
 
-
 // email pop-up
 	$('.scrollable').on("click", ".email", function() {
 		var name = $(this).attr('title');
 		$('#email-pop').show();
 		$('#to').text(name);
-		
 		
 		$('#shade').toggle().css({ opacity: 0.6, 'width':$(document).width(),'height':$(document).height()});
 		return false;	
@@ -233,16 +233,38 @@ $(document).ready(function(){
 		return false;
 	});
 
-   
-   $("#send-mail").click(function(event) {
 
+
+
+
+
+$('#email').validate({
+
+		rules: {
+			"subject": {
+				required: true,
+				minlength: 2
+			},
+			"message": {
+				required: true,
+				minlength: 2
+			}
+		},
+		messages: {
+			"subject": "Please enter subject.",
+			"message": "Please enter message."
+		},
+		// move error message 
+		errorPlacement: function(error, element) {
+			 error.appendTo(element.parent());
+		},
+
+    submitHandler: function(form) {
         $.ajax({
         url: "webservice.php",
         type: "POST",
         data: $("#email").serialize(),
         success: function(data) {
-//                       $('#email-pop-2 .error-email').html(data);
-//           $('#email-pop-2 .error-email').show();
            $('#email-success').html(data);
            $('#email-success').show();
 		   $('#email').hide();
@@ -251,13 +273,52 @@ $(document).ready(function(){
             alert(textStatus);
         }
         });
-   });
+    }
+});
 
 
 
 
 
-
+//	// validate the email form 
+//	$("#email").validate({
+//		rules: {
+//			"subject": {
+//				required: true,
+//				minlength: 2
+//			},
+//			"message": {
+//				required: true,
+//				minlength: 2
+//			}
+//		},
+//		messages: {
+//			"subject": "Please enter subject.",
+//			"message": "Please enter message."
+//		},
+//		// move error message 
+//		errorPlacement: function(error, element) {
+//			 error.appendTo(element.parent());
+//		}		
+//	});
+//
+//   $("#send-mail").click(function(event) {
+//        $.ajax({
+//        url: "webservice.php",
+//        type: "POST",
+//        data: $("#email").serialize(),
+//        success: function(data) {
+////                       $('#email-pop-2 .error-email').html(data);
+////           $('#email-pop-2 .error-email').show();
+//           $('#email-success').html(data);
+//           $('#email-success').show();
+//		   $('#email').hide();
+//        },
+//        error: function(jqXHR, textStatus, errorThrown) {
+//            alert(textStatus);
+//        }
+//        });
+//   });
 
 }); // Closes Document Ready
 
