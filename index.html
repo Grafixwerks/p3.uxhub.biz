@@ -40,22 +40,17 @@
         </div><!-- close .banner -->
 
         <div class="scrollable">
-        
-            <h1>Welcome to Initech Intranet</h1>
-            
-            <p>Duis adipiscing ultricies rhoncus. Maecenas nisl nunc, ultrices ut bibendum vitae, vulputate ac odio. Quisque id nisi urna. Quisque non venenatis nulla, quis pharetra enim. Aenean dui est, viverra sed vulputate eget, aliquet sit amet mi. Sed ullamcorper massa ante. Vestibulum ut eros eget nunc iaculis lobortis. Vestibulum eleifend hendrerit libero a sagittis. Proin fermentum, magna sit amet eleifend condimentum, orci mi ornare dolor, ut fermentum eros quam sit amet justo. Vestibulum malesuada dolor eget luctus aliquam. Proin condimentum in ipsum eu aliquet. </p>
-            
-            <p>Nunc et nisi viverra, tincidunt nunc sed, feugiat diam. Mauris id nulla at mi aliquet auctor a sit amet diam. Aenean gravida et nunc sed condimentum. Sed ornare nulla quam, nec rhoncus diam luctus in. Fusce dui turpis, fermentum at sapien et, euismod imperdiet diam. Fusce posuere, eros eget tristique dapibus, ligula tellus condimentum massa, vitae euismod odio elit eu tellus. </p>
-            
-            <img src="images/initech.jpg" width="533" height="356" alt="" class="home-img">
+
+<!--    ajax content goes here   -->
         
         </div><!-- close class scrollable -->
     
     </div><!-- close .right-col -->
 
 
-    <div id="shade">&nbsp;</div><!--  Close shade  -->
-
+    <div id="shade">
+    	&nbsp;
+	</div><!--  Close shade  -->
 
     <div id="email-pop" style="display:none" >
     <a href="javascript: void(0)" id="close" class="close">Close</a>
@@ -101,6 +96,15 @@
 <script type="text/javascript" >
 // <![CDATA[
 $(document).ready(function(){
+$('.scrollable').load('home.html', function(response, status, xhr) {
+			  if (status == "error") {
+			  var msg = "<h3>Sorry but there was an error.</h3>";
+			 $("#load-error").html(msg);
+			  }
+		});	
+
+
+
 // text resize 
     var resize = $.cookie('textsize');
     var options = { path: '/', expires: 10 };
@@ -161,7 +165,6 @@ $(document).ready(function(){
 		$('#nav li a.first').parent().removeClass("selected");
 		$('#nav li a.first').parent().removeClass("click");
 		$('#nav li a.second').parent().removeClass("click");
-//		$('#nav li a.third').parent().removeClass("click");
 		return false;
 	});
 
