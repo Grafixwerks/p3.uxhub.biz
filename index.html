@@ -13,6 +13,7 @@
 
   <div id="left-col" >
     <a href="index.html" title="Home" id="logo">Initech Corporate Intranet</a>
+    <!-- Source: Judge, Mike, Office Space, 1999 -->
     
     <div id="text-tool">
     <span class="flt-l">Text Size:&nbsp;</span><a href="#" title="Small text" id="small-text">A</a><span>&nbsp;</span><a href="#" title="Medium text" id="medium-text">A</a><span>&nbsp;</span><a href="#" title="Large text" id="large-text">A</a>
@@ -36,7 +37,8 @@
     <div class="right-col">
     
         <div class="banner">
-        <img src="images/good-for-company.png" width="770" height="76" alt="Is This Good For the COMPANY?">  
+        <img src="images/good-for-company.png" width="770" height="76" alt="Is This Good For the COMPANY?"> 
+        <!-- Source: Judge, Mike, Office Space, 1999 --> 
         </div><!-- close .banner -->
 
         <div class="scrollable">
@@ -153,7 +155,6 @@ $('.scrollable').load('home.html', function(response, status, xhr) {
 		$('.second-nav').hide();
 		$('#nav li a.first').parent().removeClass("selected");
 		$('#nav li a.first').parent().removeClass("click");
-//		return false;
 	});
 
 //	hide everything on click top nav
@@ -168,7 +169,6 @@ $('.scrollable').load('home.html', function(response, status, xhr) {
 	$('a.first').click(function () {
 		$(this).parent().addClass("click");
 		$(this).parent().children().show();		
-//		return false;
 	})
 
 	// load main content

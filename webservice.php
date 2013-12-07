@@ -1,6 +1,4 @@
 <?php
-//require_once("config.php");
-
 // send email
 if($_POST['type'] == "1") {
 
@@ -14,7 +12,5 @@ if($_POST['type'] == "1") {
 	} else {
 	echo("Message delivery failed.  Please try again.");
 	}
-
 }
-
 ?>
