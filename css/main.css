@@ -12,8 +12,6 @@ body {
 .error  {
 	color:#FF0000;
 }
-
-
 /*  Different text sizes for text tool  */
 body.small .scrollable p,
 body.small .scrollable ul,
@@ -66,9 +64,11 @@ a img {
 .flt-l {
 	display:block;
 	float:left;
-	padding:5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
 }
-
 #text-tool a {
 	display:block;
 	float:left;
@@ -81,28 +81,32 @@ a img {
 	margin-right: 0px;
 }
 
-#small-text {
+#text-tool #small-text {
 	font-size: 13px;
 }
-#medium-text {
+#text-tool #medium-text {
 	font-size: 16px;
+	padding-top: 3px;
 }
-#large-text {
+#text-tool #large-text  {
 	font-size: 19px;
+	padding-right: 0px;
+	margin-right: 0px;
+	padding-top: 0px;
 }
 
 
 body.small #text-tool #small-text {
 	text-decoration: none;
-	color: #52B5A0
+	color: #fff
 }
 body.medium #text-tool #medium-text {
 	text-decoration: none;
-	color: #52B5A0;
+	color: #fff;
 }
 body.large #text-tool #large-text {
 	text-decoration: none;
-	color: #52B5A0;
+	color: #fff;
 }
 
 
@@ -157,6 +161,7 @@ h1 {
 	margin: 0px;
 	padding: 10px 0px 0px;
 	width: 175px;
+	background: #999;
 }
 #nav li {
 	background: #82919e; /* Old browsers */
@@ -167,6 +172,31 @@ h1 {
 	background: -ms-linear-gradient(top,  #82919e 2%,#65707a 20%,#5b5f65 54%,#1b2129 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #82919e 2%,#65707a 20%,#5b5f65 54%,#1b2129 100%); /* W3C */
 }
+/*#nav li:hover {
+	-moz-opacity: 0.90;
+opacity: 0.90;
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=90);
+}
+
+
+#nav li:hover ul li {
+	-moz-opacity: 1;
+opacity: 1;
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=100);
+}*/
+#nav li:hover a {
+	color:#52B5A0;
+}
+#nav li:hover li a {
+	color:#fff;
+}
+#nav li:hover li a:hover  {
+	color: #52B5A0;
+}
+#nav li.selected:hover a {
+	color: #fff;
+}
+
 #nav li.selected {
 	background: #76d6bf; /* Old browsers */
 	background: -moz-linear-gradient(top, #76d6bf 2%, #52b5a0 36%, #307766 79%, #194f42 100%); /* FF3.6+ */
@@ -176,15 +206,17 @@ h1 {
 	background: -ms-linear-gradient(top, #76d6bf 2%,#52b5a0 36%,#307766 79%,#194f42 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #76d6bf 2%,#52b5a0 36%,#307766 79%,#194f42 100%); /* W3C */
 }
+
+
 #nav li.click {
 	background-image: url(../images/bg-nav-click.jpg);
 }
 #nav li ul.second-nav li.click a.second {
 	color:#5CAFE1;
 }
-#nav li ul.second-nav ul.third-nav li.click a.third {
+/*#nav li ul.second-nav ul.third-nav li.click a.third {
 	color:#5CAFE1;
-}
+}*/
 #nav li a {
 	display:block;
 	padding-top: 21px;
@@ -280,8 +312,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 }
 .staff .staff-pic {
 	float: left;
-	padding-top: 20px;
-	padding-left: 25px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	margin-top: 15px;
+	margin-left: 25px;
+	margin-bottom: 10px;
 }
 .staff h3 {
 	font-size: 18px;
@@ -328,6 +365,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 }
 .right-col .staff-right-col h3 {
 	padding: 0px;
+	margin-top: 15px;
 }
 #email-pop {
 	background-color: #CCC;
@@ -347,8 +385,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	left: 280px;
 }
 #email-pop legend {
-	font-size: 16px;
-	font-weight: bold;
+	display:none;
 }
 #subject {
 	float: left;
@@ -381,21 +418,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	float: right;
 	margin-right: 28px;
 	cursor:pointer;
+	margin-top: 20px;
 }
 #email-pop fieldset {
 	border-style: none;
 }
 #close {
 	display: block;
-	height: 25px;
-	width: 25px;
+	height: 27px;
+	width: 27px;
 	text-indent:-9999px;
 	position: absolute;
 	top: 15px;
-	right: 28px;
-	background-image: url(../images/close.png);
-	background-repeat: no-repeat;
-	background-position: 5px 5px;
+	right: 32px;
+	background: url(../images/close.png) no-repeat 0px 0px;
 }
 #shade {
 	background: #000;
@@ -415,4 +451,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	border: 1px solid #000;
 	margin-top: 5px;
 	margin-left: 20px;
+}
+#cancel {
+	color: #FFF;
+	text-decoration: none;
+	margin-left: 15px;
 }

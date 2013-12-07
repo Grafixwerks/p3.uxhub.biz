@@ -24,7 +24,7 @@
     <li id="staff"><a href="staff.html" class="first live content">STAFF</a></li>
     
     <li id="memos"><a href="#" class="first">MEMOS</a>
-          <ul class="second-nav" style="display:none"><!---->
+          <ul class="second-nav" style="display:none">
           <li><a href="memo-1.html" class="live content">TPS Reports</a></li>
           <li><a href="memo-2.html" class="live content">Hawaiian shirt day</a></li>
         </ul>
@@ -88,7 +88,6 @@
     
     </div><!--close email-pop-->
 
-
 </div><!-- close .wrapper -->
 <script type="text/javascript" language="javascript" src="js/jquery-2.0.3.min.js"></script>
 <script type="text/javascript" language="javascript" src="js/jquery.cookie.js"></script>
@@ -102,8 +101,6 @@ $('.scrollable').load('home.html', function(response, status, xhr) {
 			 $("#load-error").html(msg);
 			  }
 		});	
-
-
 
 // text resize 
     var resize = $.cookie('textsize');
@@ -151,7 +148,7 @@ $('.scrollable').load('home.html', function(response, status, xhr) {
 	  return false;
     });	
 
-//	hide when loading main content
+//	hide navigation items when loading main content
 	$('a.live').click(function () {
 		$('.second-nav').hide();
 		$('#nav li a.first').parent().removeClass("selected");
@@ -202,17 +199,16 @@ $('.scrollable').load('home.html', function(response, status, xhr) {
 		return false;
 	});
 
-// email pop-up
+// email modal
 	$('.scrollable').on("click", ".email", function() {
 		var name = $(this).attr('title');
 		$('#email-pop').show();
 		$('#to').text(name);
-		
 		$('#shade').toggle().css({ opacity: 0.6, 'width':$(document).width(),'height':$(document).height()});
 		return false;	
 	});		
 
-// close email pop up
+// close email modal
 	$('.close').click(function () {
 		$('#email-pop').hide();
 		$('#shade').hide();
@@ -221,7 +217,6 @@ $('.scrollable').load('home.html', function(response, status, xhr) {
 
 // Validate email form and send email via Ajax
 $('#email').validate({
-
 		rules: {
 			"subject": {
 				required: true,
@@ -240,7 +235,6 @@ $('#email').validate({
 		errorPlacement: function(error, element) {
 			 error.appendTo(element.parent());
 		},
-
     submitHandler: function(form) {
         $.ajax({
         url: "webservice.php",
@@ -262,6 +256,5 @@ $('#email').validate({
 
 // ]]>
 </script>
-
 </body>
 </html>
